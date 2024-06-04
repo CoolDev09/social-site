@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f2f5;
 }
 
 #app {
@@ -12,38 +12,34 @@ body {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
 }
 
-#main-feed {
+#user-info {
+    display: flex;
+    align-items: center;
+}
+
+#user-info span {
+    margin-right: 10px;
+}
+
+#main-feed-container {
     margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-}
-
-.post {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.post img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 10px;
 }
 
 #post-box {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 #post-text {
@@ -71,12 +67,27 @@ button:hover {
     background-color: #0056b3;
 }
 
-#friends-list, #group-chat {
-    margin-top: 20px;
-    padding: 20px;
+#main-feed {
+    display: flex;
+    flex-direction: column-reverse;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #fafafa;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .comment-box {
@@ -93,11 +104,51 @@ button:hover {
     padding: 5px;
 }
 
+#friends-list, #group-chat {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 #chat-messages {
     max-height: 200px;
     overflow-y: auto;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     padding: 10px;
+    border-radius: 5px;
+}
+
+#sign-in-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
