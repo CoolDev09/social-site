@@ -1,6 +1,7 @@
 let posts = [];
 let friends = ['Alice', 'Bob', 'Charlie'];
 let groupChatMessages = [];
+let currentUser = 'Guest';
 
 function addPost() {
     const text = document.getElementById('post-text').value;
@@ -101,4 +102,21 @@ function sendMessage() {
 function displayGroupChatMessages() {
     const chatMessagesDiv = document.getElementById('chat-messages');
     chatMessagesDiv.innerHTML = groupChatMessages.map(msg => `<p>${msg}</p>`).join('');
+}
+
+function showSignIn() {
+    document.getElementById('sign-in-modal').style.display = 'block';
+}
+
+function hideSignIn() {
+    document.getElementById('sign-in-modal').style.display = 'none';
+}
+
+function signIn() {
+    const username = document.getElementById('sign-in-username').value;
+    if (username) {
+        currentUser = username;
+        document.getElementById('username').innerText = currentUser;
+        hideSignIn();
+    }
 }
