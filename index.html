@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="header">
+            <h1>Social Media Site</h1>
+            <button onclick="showFriends()">Friends</button>
+            <button onclick="showGroupChat()">Group Chat</button>
+        </div>
+        <div id="main-feed">
+            <!-- Posts will be appended here -->
+        </div>
+        <div id="post-box">
+            <textarea id="post-text" placeholder="What's on your mind?"></textarea>
+            <input type="file" id="post-image" accept="image/*">
+            <button onclick="addPost()">Post</button>
+        </div>
+        <div id="friends-list" style="display: none;">
+            <h2>Friends</h2>
+            <div id="friends">
+                <!-- Friends will be listed here -->
+            </div>
+            <button onclick="hideFriends()">Close</button>
+        </div>
+        <div id="group-chat" style="display: none;">
+            <h2>Group Chat</h2>
+            <div id="chat-messages">
+                <!-- Chat messages will be listed here -->
+            </div>
+            <textarea id="chat-input" placeholder="Type a message"></textarea>
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="hideGroupChat()">Close</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
